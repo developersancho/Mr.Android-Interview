@@ -13,10 +13,10 @@
     Uygulamadaki kaynaklara referans olarak her yerden erişmemizi saglayan Android isletim sistemi tarafindan implement edilmis bir Interface'dir.
     Uygulamanin /res klasorunde bulunan kaynaklara (stringler, resim dosyalari vs.) erisimi saglamak icin kullanilir.
     Yeni bir Activity baslatma, Intent'leri kullanma gibi isler de Context tarafindan yapilir.
-    
-* Application Context, getApplicationContext() metoduyla uygulamanın herhangi biryerinden uygulama Context’ini alınır, singleton’dır, uygulamayla aynı yaşam süresine sahiptir.
+
+* Application Context, getApplicationContext() metoduyla uygulamanın herhangi biryerinden uygulama Context’ini alır, singleton’dır, uygulamayla aynı yaşam süresine sahiptir.
 * Activity Context, ActivityName.this yoluyla çağrılır ve Activity ile aynı yaşam süresine sahiptir. Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de aynı mantıktadır. Activity’nin kendisi Context’i implement eder.
-* ContentProvider, herhangi bir Context barındırmaz lakin sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
+* ContentProvider, herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
 * BroadcastReceiver, kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
 
 ## Katkı Sağlayanlar
