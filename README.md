@@ -82,7 +82,7 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
 #### Veri Saklama Yöntemleri Nelerdir?
     1- SharedPreferences
     2- DB(ROOM)
-    3- Content Provider(İçerik Sağlayacı)
+    3- Content Provider(İçerik Sağlayıcı)
     4- Internal Storage
     5- External Storage
     6- Local Cache
