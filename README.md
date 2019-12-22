@@ -48,27 +48,27 @@
 * onStop() onPause gibi activity arka plana atıldığında çalışır. onStop için iki durumdan bahsedebiliriz. Bunlar kullanıcının veya uygulamanın tekrar aynı activitye dönmesi veya bir daha activitye geri gelmemesidir. Activitye geri dönüldüğü taktirde onRestart -> onStart metodları çalışır, ikinci durumda ise onDestroy metodu ile yaşam döngüsü tamamlanır.
 * onDestroy() Yaşam döngüsünü tamamlanır. Bir activitye ait bütün kaynaklar temizlenir.
 
-    * onRestart()
-     Kullanıcıya uygulamaya geri döndüğünde onStop () ‘dan sonra çağrılır. OnStart () ve onResume () takip eder
+* onRestart()
+ Kullanıcıya uygulamaya geri döndüğünde onStop () ‘dan sonra çağrılır. OnStart () ve onResume () takip eder
 
-    * onSaveInstanceState()
-    Öldürülmeden önce bir etkinlikten örnek durumunu almak için çağrılır ve böylece durumun onCreate (Bundle) veya onRestoreInstanceState (Bundle) (bu yöntemle doldurulan Bundle her ikisine de geçilir) olarak geri yüklenebilir.
-    Bu yöntem, bir etkinliğin öldürülmesi öncesinde çağrılır; böylece gelecekte bir süre geri döndüğünde duruma geri yüklenebilir.
+* onSaveInstanceState()
+Öldürülmeden önce bir etkinlikten örnek durumunu almak için çağrılır ve böylece durumun onCreate (Bundle) veya onRestoreInstanceState (Bundle) (bu yöntemle doldurulan Bundle her ikisine de geçilir) olarak geri yüklenebilir.
+Bu yöntem, bir etkinliğin öldürülmesi öncesinde çağrılır; böylece gelecekte bir süre geri döndüğünde duruma geri yüklenebilir.
 
-    * onRestoreInstanceState()
-    Bu yöntem, onStart () işleminden sonra, burada savedInstanceState içinde verilen önceden kaydedilmiş bir durumdan yeniden başlatıldığında kullanılır.
-    Çoğu uygulama, yalnızca durumunu düzeltmek için onCreate kullanır, ancak bazen başlatma tamamlandıktan sonra varsayılan uygulamanızın kullanılıp kullanılmayacağına izin vermek için bunu yapmak daha uygun olacaktır.
-    Bu yöntemin varsayılan uygulaması, daha önce onSaveInstanceState (Bundle) tarafından dondurulmuş olan herhangi bir görünüm durumunun geri yüklenmesini gerçekleştirir.
-    Bu yöntem, onStart () ve onPostCreate (Paket) arasında çağrılır.
+* onRestoreInstanceState()
+Bu yöntem, onStart () işleminden sonra, burada savedInstanceState içinde verilen önceden kaydedilmiş bir durumdan yeniden başlatıldığında kullanılır.
+Çoğu uygulama, yalnızca durumunu düzeltmek için onCreate kullanır, ancak bazen başlatma tamamlandıktan sonra varsayılan uygulamanızın kullanılıp kullanılmayacağına izin vermek için bunu yapmak daha uygun olacaktır.
+Bu yöntemin varsayılan uygulaması, daha önce onSaveInstanceState (Bundle) tarafından dondurulmuş olan herhangi bir görünüm durumunun geri yüklenmesini gerçekleştirir.
+Bu yöntem, onStart () ve onPostCreate (Paket) arasında çağrılır.
 
-    * onActivityResult()
-    Uygulama açıldığında, size gönderilen requestCode kodunu döndürdüğü resultCode’u ve ona ait ek verileri veren metot’dur.
-    Uygulama açıkça döndürürse, sonuç döndürmezse veya işlem sırasında çöktüğünde resultCode RESULT_CANCELED olur.
-    Bu çağrıyı, etkinliğiniz yeniden başladığında onResume () ‘dan hemen önce alacaksınız.
-    Bu yöntem, activity içerisinde noHistory değerini true olarak ayarlanırsa hiçbir zaman çağrılmaz.
+* onActivityResult()
+Uygulama açıldığında, size gönderilen requestCode kodunu döndürdüğü resultCode’u ve ona ait ek verileri veren metot’dur.
+Uygulama açıkça döndürürse, sonuç döndürmezse veya işlem sırasında çöktüğünde resultCode RESULT_CANCELED olur.
+Bu çağrıyı, etkinliğiniz yeniden başladığında onResume () ‘dan hemen önce alacaksınız.
+Bu yöntem, activity içerisinde noHistory değerini true olarak ayarlanırsa hiçbir zaman çağrılmaz.
 
-    * onBackPressed()
-    Activity içerisinde geri geldiğimizde tetiklenen metottur.
+* onBackPressed()
+Activity içerisinde geri geldiğimizde tetiklenen metottur.
 
 #### SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?
     commit() syncronous gerçekleşir, apply() asyncronous gerçekleşir.
@@ -135,7 +135,7 @@
     Activity'ler arası veri taşımak için kullanılır.(Bundle)
     Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
     2' ye ayrılır.
-    
+
 * Explicit(açık) Intent → aktiviteler arası geçiş. (Bundle, Intent)
 * Implicit(üstü kapalı) Intent( Telefon araöası yapmak, msj, mail göndermek, foto ve video çekmek)
 
