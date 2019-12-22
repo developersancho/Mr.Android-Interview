@@ -71,7 +71,8 @@ Bu yöntem, activity içerisinde noHistory değerini true olarak ayarlanırsa hi
 Activity içerisinde geri geldiğimizde tetiklenen metottur.
 
 #### SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?
-    commit() syncronous gerçekleşir, apply() asyncronous gerçekleşir.
+    commit() senkron gerçekleşir, apply() asenkron gerçekleşir.
+    senkron işlemlerde geri dönüş değeri beklenir, asenkron işlemlerde çalış unut prensibi yatar.
     commit 'te işlem başarılı ise true, başarısız ise false döner. apply arka planda gerçekleşir değer dönmez.
     apply commit'e göre daha hızlıdır.
 
