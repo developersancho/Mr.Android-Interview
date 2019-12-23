@@ -138,7 +138,7 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
     2' ye ayrılır.
 
 * Explicit(açık) Intent → aktiviteler arası geçiş. (Bundle, Intent)
-* Implicit(üstü kapalı) Intent( Telefon araöası yapmak, msj, mail göndermek, foto ve video çekmek)
+* Implicit(üstü kapalı) Intent( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
 
 
 
