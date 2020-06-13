@@ -15,25 +15,25 @@
     * Garbage Collection'ın leak oluşturan nesneleri bellekten silememesi durumudur.
  
 ** Bellekte nesneler ve değer tipleri tutulur ve bunlar `STACK` ve `HEAP`' te saklanır.
-####### Stack
+###### Stack
     * Bellek içerisinde değer tipleri ve nesne referansları tutulur.
     * İlk giren son çıkar.
     * Bellekte son kısma gelindiğinde temizlenir.
     * Bir nesne oluşturulduğunda nesne heap üzerinde, referansı stack'te tutulur.
     * Stack'te taşma durumu olursa ```StackOverFlow``` hatası fırlatılır.
-####### Heap
+###### Heap
     * Kendisi dinamiktir. Stack' e göre yavaştır.
     * Nesne oluşturulduğunda Heap' te tutulur.
     * Bellek JVM tabanında referansı bulunan nesneleri işaretler, geriye kalanları temizler.
     * Heap'te taşma durumu olursa ```OutOfMemory``` hatası fırlatılır.
-####### Garbage Collection
+###### Garbage Collection
     * Aktif olan nesnelerin bellekteki referanslarını tespit eder ve işaretler.
     * İşaretlenmemiş tüm nesneleri bellekten temizler.
     * Aktif olan nesneleri yeniden düzenler.
     * Garbage Collection devreye girdiğinde UI(Kullanıcı Arayüzü) bir miktar(16ms) gecikir fakat kullanıcı bunu farkedemez
     Bu gecikme süresi(işlem süresi) 100ms+ olursa UI cevap vermemeye başlar. Bu cevap vermeme süresi 5 sn' den uzun sürerse
     ANR ```(A)pplication (N)ot (R)esponding``` uyarı penceresi çıkar.
-####### Dikkat edilmesi gereken noktalar
+###### Dikkat edilmesi gereken noktalar
     * Bir listener ve ya receiver register edildikten sonra bulunduğu lifecyle destroy edilmeden önce unregister yapılmalıdır.
     * İçe içe sınıf referansları tanımlanırken ```inline``` keywordu kullanılmalıdır.
     * Activity ve ya View referansları static tanımlanacağı zaman WeakReference olarak tanımlanmalıdır.
