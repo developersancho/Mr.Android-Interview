@@ -10,8 +10,8 @@
 
 #### Memory Leak Nedir?
     * Belleğin(RAM) taşması demektir. Kullanılmayan nesnelerin bellekte tutulmasıdır.
-    * Nesne oluşturulduğunda bellekte ``(HEAP)`` saklanır, sonrasında saklınılan yerden bu işaretlenen nesnenin(kullanılmayan) 
-    silinememesi durumunda memory leak oluşur.
+    * Nesne oluşturulduğunda bellekte "(HEAP)" saklanır, sonrasında saklınılan yerden 
+    bu işaretlenen nesnenin(kullanılmayan) silinememesi durumunda memory leak oluşur.
     * Garbage Collection'ın leak oluşturan nesneleri bellekten silememesi durumudur.
  
 ** Bellekte nesneler ve değer tipleri tutulur ve bunlar `STACK` ve `HEAP`' te saklanır.
@@ -20,29 +20,31 @@
     * İlk giren son çıkar.
     * Bellekte son kısma gelindiğinde temizlenir.
     * Bir nesne oluşturulduğunda nesne heap üzerinde, referansı stack'te tutulur.
-    * Stack'te taşma durumu olursa ```StackOverFlow``` hatası fırlatılır.
+    * Stack'te taşma durumu olursa "StackOverFlow" hatası fırlatılır.
 ###### Heap
     * Kendisi dinamiktir. Stack' e göre yavaştır.
     * Nesne oluşturulduğunda Heap' te tutulur.
     * Bellek JVM tabanında referansı bulunan nesneleri işaretler, geriye kalanları temizler.
-    * Heap'te taşma durumu olursa ```OutOfMemory``` hatası fırlatılır.
+    * Heap'te taşma durumu olursa "OutOfMemory" hatası fırlatılır.
 ###### Garbage Collection
     * Aktif olan nesnelerin bellekteki referanslarını tespit eder ve işaretler.
     * İşaretlenmemiş tüm nesneleri bellekten temizler.
     * Aktif olan nesneleri yeniden düzenler.
-    * Garbage Collection devreye girdiğinde UI(Kullanıcı Arayüzü) bir miktar(16ms) gecikir fakat kullanıcı bunu farkedemez
-    Bu gecikme süresi(işlem süresi) 100ms+ olursa UI cevap vermemeye başlar. Bu cevap vermeme süresi 5 sn' den uzun sürerse
-    ANR ```(A)pplication (N)ot (R)esponding``` uyarı penceresi çıkar.
+    * Garbage Collection devreye girdiğinde UI(Kullanıcı Arayüzü) bir miktar(16ms) gecikir fakat 
+    kullanıcı bunu farkedemez bu gecikme süresi(işlem süresi) 100ms+ olursa UI cevap vermemeye başlar. 
+    Bu cevap vermeme süresi 5 sn' den uzun sürerse ANR - (A)pplication (N)ot (R)esponding 
+    uyarı penceresi çıkar.
 ###### Dikkat edilmesi gereken noktalar
-    * Bir listener ve ya receiver register edildikten sonra bulunduğu lifecyle destroy edilmeden önce unregister yapılmalıdır.
-    * İçe içe sınıf referansları tanımlanırken ```inline``` keywordu kullanılmalıdır.
+    * Bir listener ve ya receiver register edildikten sonra bulunduğu lifecyle destroy edilmeden önce 
+    unregister yapılmalıdır.
+    * İçe içe sınıf referansları tanımlanırken "inline" keywordu kullanılmalıdır.
     * Activity ve ya View referansları static tanımlanacağı zaman WeakReference olarak tanımlanmalıdır.
 ```kotlin
-    private var activity: WeakReference<Activity>? = null
+private var activity: WeakReference<Activity>? = null
 ```
       
 #### ANR Nedir?
-    ANR, `(A)pplication (N)ot (R)esponding` anlamına gelir. UI thread'de uzun süren (5 saniye içerisinde yanıt alınamayan)
+    ANR, "(A)pplication (N)ot (R)esponding" anlamına gelir. UI thread'de uzun süren (5 saniye içerisinde yanıt alınamayan)
     işlemlerde Android işletim sistemi tarafından gösterilen bir dialogdur.
 
 #### Context Nedir?
