@@ -16,6 +16,7 @@
 * **[Android 11](#android-11)**
 * **[Android 10](#android-10)**
 * **[KOTLIN](#kotlin)**
+* **[Inline Functions & Reified types](#inline-reified)**
 * **[SOLID Prensipleri Nedir?](#solid)**
 * **[ADB(Android Debug Bridge) nedir?](#adb)**
 * **[NDK nedir?](#ndk)**
@@ -223,6 +224,21 @@ private var activity: WeakReference<Activity>? = null
     * DSL infix notation(dsl üretme, infix fun Int.plus(c: Int) -> 15.plus(5) yerine 15 plus 5 yazılır.)
     * delegation (değişkenlerin değerinin yönetimini başka bir fonksiyona veriyoruz.)
     
+    
+#### <a name="inline-reified"></a> Inline Functions & Reified types
+    * Arka planda fonksiyon her çağrıldığında aldığı parametre için bir nesne oluşturur. Doğru yerde 
+    kullanılmadığında belleğe yük olur.
+    * Fonksiyona inline dediğimizde parametre için nesne oluşturmaz, çağrıldığı yerde çalışması için
+    bir kod bloğu görevi üstlenir.
+    * reified dediğimizde parametre alma zorunluluğu kaldırılır.
+* ilk hali
+```kotlin
+fun <T: Any> Retrofit.create(service: KClass<T>): T = create(service.javaObjectType) 
+```        
+* son hali
+```kotlin
+inline fun <reified : T> Retrofit.create(): T = create(T::class.java)
+```     
     
 #### <a name="solid"></a> SOLID Prensipleri Nedir?
     * SOLID yazılım prensipleri; geliştirilen yazılımın esnek, yeniden kullanılabilir, sürdürülebilir 
