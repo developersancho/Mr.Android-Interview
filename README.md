@@ -9,42 +9,42 @@
 * **[MultiThread Nedir?](#multithread-nedir)**
 * **[THREADS](#threads)**
 * **[Paralel Programlama nedir?](#paralel)**
-* **[Asenkron Programlama(Concurrency) nedir?](#asenkron-programlamaconcurrency-nedir)**
-* **[COROUTINE nedir? ](#coroutine-nedir)**
-* **[OOP(Object Oriented Programming)](#oopobject-oriented-programming)**
-* **[Yazılım Geliştirme Modelleri](#yazlm-gelitirme-modelleri)**
+* **[Asenkron Programlama(Concurrency) nedir?](#asenkron)**
+* **[COROUTINE nedir? ](#coroutine)**
+* **[OOP(Object Oriented Programming)](#oop)**
+* **[Yazılım Geliştirme Modelleri](#ygm)**
 * **[Android 11](#android-11)**
 * **[Android 10](#android-10)**
 * **[KOTLIN](#kotlin)**
-* **[SOLID Prensipleri Nedir?](#solid-prensipleri-nedir)**
-* **[ADB(Android Debug Bridge) nedir?](#adbandroid-debug-bridge-nedir)**
-* **[NDK nedir?](#ndk-nedir)**
-* **[Bitmap nedir?](#bitmap-nedir)**
-* **[Vektörel Grafik nedir?](#vektrel-grafik-nedir)**
-* **[Multidex nedir?](#multidex-nedir)**
-* **[FileProvider Nedir?](#fileprovider-nedir)**
-* **[ListView ile RecyclerView arasındaki farklar nelerdir?](#listview-ile-recyclerview-arasndaki-farklar-nelerdir)**
-* **[Constraint Layout Özellikleri](#constraint-layout-zellikleri)**
-* **[Screen rotation edildiğinde activity lifecycle nasıl çalışır?](#screen-rotation-edildiinde-activity-lifecycle-nasl-alr)**
-* **[Serializable ve Parcelable nedir? Farkları nelerdir? ](#serializable-ve-parcelable-nedir-farklar-nelerdir)**
-* **[Bundle ile en fazla kaç mb veri taşınır?](#bundle-ile-en-fazla-ka-mb-veri-tanr)**
-* **[Build Type ve Product Flavor arasındaki fark nedir?](#build-type-ve-product-flavor-arasndaki-fark-nedir)**
-* **[ProGuard Nedir?](#proguard-nedir)**
-* **[Context Nedir?](#context-nedir)**
-* **[Service nedir?](#service-nedir)**
-* **[Broadcast Receiver nedir?](#broadcast-receiver-nedir)**
-* **[Activity ve Fragment Nedir?](#activity-ve-fragment-nedir)**
-* **[Activity ve Fragment Arasındaki Farklar Nelerdir?](#activity-ve-fragment-arasndaki-farklar-nelerdir)**
-* **[Activity Fragment Lifecycle Nedir?](#activity-fragment-lifecycle-nedir)**
-* **[Activity Lifecycle Metodları?](#activity-lifecycle-metodlar)**
+* **[SOLID Prensipleri Nedir?](#solid)**
+* **[ADB(Android Debug Bridge) nedir?](#adb)**
+* **[NDK nedir?](#ndk)**
+* **[Bitmap nedir?](#bitmap)**
+* **[Vektörel Grafik nedir?](#vector)**
+* **[Multidex nedir?](#multidex)**
+* **[FileProvider Nedir?](#fileprovider)**
+* **[ListView ile RecyclerView arasındaki farklar nelerdir?](#recyclerview)**
+* **[Constraint Layout Özellikleri](#constraint)**
+* **[Screen rotation edildiğinde activity lifecycle nasıl çalışır?](#rotation)**
+* **[Serializable ve Parcelable nedir? Farkları nelerdir? ](#parcelable)**
+* **[Bundle ile en fazla kaç mb veri taşınır?](#bundle)**
+* **[Build Type ve Product Flavor arasındaki fark nedir?](#build)**
+* **[ProGuard Nedir?](#proguard)**
+* **[Context Nedir?](#context)**
+* **[Service nedir?](#service)**
+* **[Broadcast Receiver nedir?](#broadcast-receiver)**
+* **[Activity ve Fragment Nedir?](#activity-fragment)**
+* **[Activity ve Fragment Arasındaki Farklar Nelerdir?](#activity-fragment-farklar)**
+* **[Activity Fragment Lifecycle Nedir?](#lifecycle)**
+* **[Activity Lifecycle Metodları?](#lifecycle-methods)**
 * **[SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?](#pref-apply-commit)**
-* **[Veri Saklama Yöntemleri Nelerdir?](#veri-saklama-yntemleri-nelerdir)**
+* **[Veri Saklama Yöntemleri Nelerdir?](#veri-saklama)**
 * **[Content Provider Nedir?](#content-provider-nedir)**
-* **[Launch Mode çeşitleri nelerdir?](#launch-mode-eitleri-nelerdir)**
-* **[Application Class Nedir?](#application-class-nedir)**
-* **[Gradle Nedir?](#gradle-nedir)**
+* **[Launch Mode çeşitleri nelerdir?](#launch-mode)**
+* **[Application Class Nedir?](#application-class)**
+* **[Gradle Nedir?](#gradle)**
 * **[Android Manifest.xml Nedir?](#android-manifestxml-nedir)**
-* **[Intent Nedir?](#intent-nedir)**
+* **[Intent Nedir?](#intent)**
 
 
 #### <a name="memory-leak-nedir"></a> Memory Leak Nedir?
@@ -86,19 +86,22 @@
 ```kotlin
 private var activity: WeakReference<Activity>? = null
 ```
+
 #### <a name="big-o-notasyonu-nedir"></a> Big O Notasyonu Nedir?
     * Bir algoritmanın performansını ve ya Time Complexity'sini hesaplamak için kullanılır.
 ###### Time Complexity
     * Bir algoritmanın çalışması için gerekli olan süredir. Bu süre işlem sayısına göre hesaplanır.
     
+    
 #### <a name="queue-ile-stack-arasndaki-fark-nedir"></a> Queue ile Stack arasındaki fark nedir?
     * Queue → FIFO(İlk giren ilk çıkar), Stack → LIFO(Son giren ilk çıkar)
+    
     
 #### <a name="multithread-nedir"></a> MultiThread Nedir?
     * Bir uygulamanın aynı anda birden fazla iş parçacıklarını(threads) işlemesidir.
 ###### Synchronization — Eş zamanlama
     * İlgili kod parçacığına aynı anda sadece bir iş parçacığı erişir ve diğerleri onu bekler.
-
+    
 #### <a name="threads"></a> THREADS
 1) UI(Main) Thread
 2) Background(Worker) Thread
@@ -115,18 +118,19 @@ private var activity: WeakReference<Activity>? = null
     binder thread-> IPC(Inter Process Communication) üzerinden faydalanır.
     Örn: Content Provider ile Contacts bilgilerinin alınması, Activity Lifecyle metotlarının ActivityManagerService
     tarafından çağrılması
-
+    
 #### <a name="paralel"></a> Paralel Programlama nedir?
     * Bir görevi paralel olarak işlenebilecek daha küçük alt görevlere ayrılacak birden fazla CPU'da 
     thread'ler ile yürütülmesi sağlanır.
-
-#### Asenkron Programlama(Concurrency) nedir?
+    
+#### <a name="asenkron"></a> Asenkron Programlama(Concurrency) nedir?
     * Bir uygulamanın aynı anda birden fazla görevi, işi yapmasıdır. Ama bu işler paralel olarak farklı 
     thread'lerde işlenmeyebilir.
     * Uzun süren IO işlerinin CPU'yu bloklamaması amacıyla kullanılır.
     * Kotlin bu yöntemi sağlamak için COROUTINE denilen bir yapı sunar.
     
-#### COROUTINE nedir?    
+    
+#### <a name="coroutine"></a> COROUTINE nedir?    
     * Thread değildir. LightWeight thread denilir.
     * Thread tarafından yürütülen iş parçalarıdır.    
 ##### suspend nedir?
@@ -138,7 +142,7 @@ private var activity: WeakReference<Activity>? = null
 ##### runblocking nedir?
     * İlgili coroutine tamamlana kadar mevcut thread' bloke eder.
 
-#### OOP(Object Oriented Programming)
+#### <a name="oop"></a> OOP(Object Oriented Programming)
     * OOP denildiğinde aklımıza aşağıdaki 4 kavram gelmelidir.
     → Abstraction(Soyutlama)
     → Inheritance(Kalıtım)
@@ -171,7 +175,7 @@ private var activity: WeakReference<Activity>? = null
 ###### super()
     * Bir alt sınıfın bir üst sınıfa erişmesini sağlar.    
 
-#### Yazılım Geliştirme Modelleri
+#### <a name="ygm"></a> Yazılım Geliştirme Modelleri
     * Bir yazılımın, üretim aşaması ve kullanım süreci boyunca geçirdiği tüm aşamalar yazılımın yaşam döngüsüdür.
 ##### WaterFall(Şelale)
     * Planlama-Analiz-Tasarım-Geliştirme-Test-Uygulama, buradaki aşamaları sırayla gerçekleştirilir.
@@ -190,7 +194,7 @@ private var activity: WeakReference<Activity>? = null
     * TDD(Test Driven Development)
     * FDD(Feature Driven Development)
 
-#### Android 11
+#### <a name="android-11"></a> Android 11
     * Wireless Debuging
     * Bubbles
     * IME Animations
@@ -200,7 +204,7 @@ private var activity: WeakReference<Activity>? = null
     * 5G Support
     * Foldo
 
-#### Android 10
+#### <a name="android-10"></a> Android 10
     * Dark Theme
     * 5G Support
     * Gesture Navigation
@@ -208,7 +212,8 @@ private var activity: WeakReference<Activity>? = null
     * Location Controls
     
     
-#### KOTLIN
+    
+#### <a name="kotlin"></a> KOTLIN
     * NullCheck
     * val,var
     * when
@@ -218,7 +223,8 @@ private var activity: WeakReference<Activity>? = null
     * DSL infix notation(dsl üretme, infix fun Int.plus(c: Int) -> 15.plus(5) yerine 15 plus 5 yazılır.)
     * delegation (değişkenlerin değerinin yönetimini başka bir fonksiyona veriyoruz.)
     
-#### SOLID Prensipleri Nedir?
+    
+#### <a name="solid"></a> SOLID Prensipleri Nedir?
     * SOLID yazılım prensipleri; geliştirilen yazılımın esnek, yeniden kullanılabilir, sürdürülebilir 
     ve anlaşılır olmasını sağlayan, kod tekrarını önleyen ve Robert C. Martin tarafından öne sürülen 
     prensipler bütünüdür.
@@ -233,38 +239,42 @@ private var activity: WeakReference<Activity>? = null
 ###### D — Dependency Inversion Principle
     * Bağımlılığı tersine çevirme, daha az bağımlı olma.
 
-#### ADB(Android Debug Bridge) nedir?
+#### <a name="adb"></a> ADB(Android Debug Bridge) nedir?
     * Android bir cihaz ile iletişim kurulmasını sağlayan bir yapıdır.
 
-#### NDK nedir?
+#### <a name="ndk"></a> NDK nedir?
     * Android uygulamalarımızda C ve ya C++ dillerinde geliştirilmiş olan kodlarımızı
     kullanmamızı sağlayan bir araçtır.
     
-#### Bitmap nedir?
+    
+#### <a name="bitmap"></a> Bitmap nedir?
     * PNG, JPEG, BMP, GIF gibi dosya formatları bitmap olarak isimlendirilir. Resim için 
     renkler ve konumları bir harita gibi işler.
     
-#### Vektörel Grafik nedir?
+    
+#### <a name="vector"></a> Vektörel Grafik nedir?
     * Path halide tutulur.
     * Bir çizgi başlangıç ve bitiş noktasının bilgisi tutulur. Dosya çalıştırılınca parse edilir,
     bitmap'e dönüştürülür.
     
-#### Multidex nedir?
+    
+#### <a name="multidex"></a> Multidex nedir?
     * APK dosyalarında .dex(Dalvik Executable) uzantısına sahip dosyalar bulunur. 
     * Bir dex dosyası 65,536'den referansa(metot) sınırlar. 
     * Bu sınır geçiliyorsa multidex enable true yapılmalıdır(21+).
     * Aksi halde “Error: Cannot fit requested classes in a single dex file.Try supplying a main-dex list. # methods: 72477 > 65536”
     hatası alır.
 
-#### FileProvider Nedir?
+#### <a name="fileprovider"></a> FileProvider Nedir?
     * 19+ için izin almadan kamera ile fotoğraf çekip app external storage kaydetmesini sağlar.
 
-#### ListView ile RecyclerView arasındaki farklar nelerdir?
+#### <a name="recylerview"></a> ListView ile RecyclerView arasındaki farklar nelerdir?
     * Listview bütün datayı ekran açılırken yükler, RecylerView ekranı kaydırdıkça yükler.
     * Listview'de yatay(horizontal) kaydırma yoktur, Recylerview'de yatay kaydırma vardır.
     * Listview'de onItemClick vardır, Recylerview'de yoktur.
     
-#### Constraint Layout Özellikleri
+    
+#### <a name="constraint"></a> Constraint Layout Özellikleri
     * Response tasarımlar için idealdir. Performanslıdır
     * Weight dinamik olarak ayarlanabilir.
     * Chain oluşturularak view'ler gruplandırılabilir.
@@ -275,29 +285,30 @@ private var activity: WeakReference<Activity>? = null
     * Consraint layout düz görünüm hiyerarşine sahip olduğu için(tree structure) döngü içerisinde çizilmez. 
     Bundan dolayı diğerlerine göre çok performanslıdır.
 
-#### Screen rotation edildiğinde activity lifecycle nasıl çalışır?
+#### <a name="rotation"></a> Screen rotation edildiğinde activity lifecycle nasıl çalışır?
     * Uygulama start edilir
     * Sırası ile onCreate() -> onStart() -> onResume() -> Cihaz rotation yapılır 
     -> onPause() -> onStop() -> onSaveInstanceState() -> onDestroy() 
     -> onCreate() -> onStart() -> onRestoreInstanceState(), onResume() metotları çalışır.
 
-#### Serializable ve Parcelable nedir? Farkları nelerdir? 
+#### <a name="parcelable"></a> Serializable ve Parcelable nedir? Farkları nelerdir? 
     * Parcelable, Serializable göre daha hızlı, performanslıdır.
     * Parcelable android için geliştirilmiştir.
     * Serializable java interface'idir.
     
-#### Bundle ile en fazla kaç mb veri taşınır?
+    
+#### <a name="bundle"></a> Bundle ile en fazla kaç mb veri taşınır?
     * En fazla 1 MB veri taşınır. Fazlası için memory cache ve ya local cache kullanabilir.
 
-#### Build Type ve Product Flavor arasındaki fark nedir?
+#### <a name="build"></a> Build Type ve Product Flavor arasındaki fark nedir?
     * Build Type, uygulamanın paketlenmesi
     * Product Flavor, uygulama için kullanıcıya yayınlayabileceğimiz farklı sürümler oluşturmamızı sağlar.
 
-#### ProGuard Nedir?
+#### <a name="proguard"></a> ProGuard Nedir?
     * Geliştirilen uygulamaların kaynak kodlarını karıştırmaya ve sıkıştırmaya 
     (uygulama boyutunu düşürmeye) yarayan ücretsiz 3. parti bir kütüphanedir.
 
-#### Context Nedir?
+#### <a name="context"></a> Context Nedir?
     * Context, uygulamanın herhangi bir zamandaki durumunu tutan bir objedir.
     * Uygulamadaki kaynaklara referans olarak her yerden erişmemizi saglayan Android işletim sistemi 
     tarafından implement edilmiş bir Interface'dir. 
@@ -313,7 +324,7 @@ Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de ayn�
 * `ContentProvider`, herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
 * `BroadcastReceiver`, kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
 
-#### Service nedir?
+#### <a name="service"></a> Service nedir?
     * Arayüzü olmayan arka planda çalışan yapıdır.
     * 2 tanedir.
 ###### Foreground Service
@@ -321,28 +332,28 @@ Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de ayn�
 ###### Background Service
     * Background thread'de çalışır. IntentService'ten extend edilir. 
 
-#### Broadcast Receiver nedir?
+#### <a name="broadcast-receiver"></a> Broadcast Receiver nedir?
     * İşletim sistemi genelinde bir uygulama ve ya kendisinin bir parçası tarafından yayınlanan
     sinyallerin dinlenmesini sağlar.
 
-#### Activity ve Fragment Nedir?
+#### <a name="activity-fragment"></a> Activity ve Fragment Nedir?
     * Activity’ler, Android platformundaki uygulamaların temel yapı taşlarından biridir.
     * Etkileşimli bir uygulama için bir giriş noktası işlevi görürler ve kullanıcıya bir uygulama aracılığıyla erişebilirler.
     * Fragment, bir Activity’de activity veya kullanıcı arabiriminin bir bölümünü temsil eder. Çoklu UI oluşturmak amacıyla kulanılır.
 
-#### Activity ve Fragment Arasındaki Farklar Nelerdir?
+#### <a name="activity-fragment-farklar"></a> Activity ve Fragment Arasındaki Farklar Nelerdir?
     * Activity tek başına oluşturulabilir. Fragment oluşturmak için Activity'e ihtiyaç vardır.
     * Activity birden fazla fragment içerebilir.
     * Her ikisininde kendine ait yaşam döngüleri vardır.(Lifecycle)
 
-#### Activity Fragment Lifecycle Nedir?
+#### <a name="lifecycle"></a> Activity Fragment Lifecycle Nedir?
     * Bir kullanıcı, uygulamanızda gezinirken, uygulamanın dışındayken ve geri döndüğünde, uygulamanızdaki Activity'ler 
     yaşam döngüsünde farklı hallerde geçiş yapar.
      * Activity sınıfı, bir durumun değiştiğini activity’ye bildirebilmesini sağlayan bir dizi geri arama sağlar:
     sistem, bir activity oluşturuyor, durduruyor, devam ettiriyor veya etkinliğin bulunduğu işlemi yok ediyor.
     * Yaşam döngüsü geri arama yöntemleri içinde, kullanıcı uygulamayı terk edip yeniden girdiğinde etkinliğinizin nasıl davrandığını bildirebilirsiniz.
 
-#### Activity Lifecycle Metodları?
+#### <a name="lifecycle-methods"></a> Activity Lifecycle Metodları?
 * `onCreate()` Activity başlatıldığında ilk çağırılan metoddur.
 * `onStart()` onCreate metodu çalıştırıldıktan sonra, görsel ögeler (tasarım) oluştuğunda çağırılan metoddur.
 * `onResume()` Eğer activity durdurulduysa, onResume ile tekrar aktif hale getirilir.
@@ -377,7 +388,7 @@ Bu yöntem, activity içerisinde noHistory değerini true olarak ayarlanırsa hi
 * `onBackPressed()`
 Activity içerisinde geri geldiğimizde tetiklenen metottur.
 
-#### SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?
+#### <a name="pref-apply-commit"></a> SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?
     commit() senkron gerçekleşir, apply() asenkron gerçekleşir.
     senkron işlemlerde geri dönüş değeri beklenir, asenkron işlemlerde çalış unut prensibi yatar.
     commit 'te işlem başarılı ise true, başarısız ise false döner. apply arka planda gerçekleşir değer dönmez.
@@ -386,8 +397,7 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
 * Use apply(). It writes the changes to the RAM immediately and waits and writes it to the internal storage(the actual preference file) after. 
 Commit writes the changes synchronously and directly to the file.
 
-
-#### Veri Saklama Yöntemleri Nelerdir?
+#### <a name="veri-saklama"></a> Veri Saklama Yöntemleri Nelerdir?
     1- SharedPreferences
     2- DB(ROOM)
     3- Content Provider(İçerik Sağlayıcı)
@@ -396,13 +406,13 @@ Commit writes the changes synchronously and directly to the file.
     6- Local Cache
     7- Remote Connection(Firebase, Webservice)
 
-#### Content Provider Nedir?
+#### <a name="content-provider-nedir"></a> Content Provider Nedir?
     * Bir uygulamanın, diğer uygulamalar tarafından depolanan verilere erişimi yönetmesini ve 
     diğer uygulamalara veri paylaşımını sağlayan bir yapıdır.
     * İçerik sağlayıcılar, bir işlemdeki verileri başka bir işlemde çalışan kodla bağlayan 
     standart arabirimdir.
 
-#### Launch Mode çeşitleri nelerdir?
+#### <a name="launch-mode"></a> Launch Mode çeşitleri nelerdir?
     Bir uygulamada oluşturulan activity instance'larının tekrardan kullanıp kullanılamacağını belirleyen kurallardır.
 * `standart:` Her bir Intent çağrısı için yeni bir tane Activity oluşturulur.
 * `singleTop:` Intent çağrısı zaten oluşturulmuş bir Activity için çağırılırsa yeni bir Activity oluşturulmaz, onun yerine var olan 
@@ -412,11 +422,11 @@ istek gönderilirse onNewIntent metodu kontrol edilmelidir.
 * `singleInstance:` singleTask moduna benzer. Ancak bu activity' i tutan task sadece tek bir singleInstance olarak tanımlanmış 
 activity' i barındırabilir.
 
-#### Application Class Nedir?
+#### <a name="application-class"></a> Application Class Nedir?
     * Application Class, Activity ve Services gibi bileşenleri içeren Android uygulamasının temel sınıfıdır.
     * Uygulama veya alt sınıfları, Android uygulamasında tüm etkinlikler veya diğer uygulama nesneleri oluşturulmadan önce başlatılır.
 
-#### Gradle Nedir?
+#### <a name="gradle"></a> Gradle Nedir?
     * Android uygulaması geliştirme aşamalarını otomatize eden açık kaynak kodlu Android Studio üzerinde çalışan bir yapı sistemidir.
     * Bir Android projesinin oluşturulmasından tamamlanmasına giden yolda derleme, test etme, paketleme gibi işlemler söz konusudur.
     * Gradle, Android uygulaması geliştirme aşamalarını yapılandırmamızı sağlayan, açık kaynak kodlu, Android Studio üzerinde çalışan 
@@ -442,14 +452,14 @@ buildToolsVersion versionuna eşit olması gerekir
 * `versionCode:` Uygulamamızı Play Store’a yüklerken ve güncelleyeceğimiz zaman sayısal olarak tutulan version değeridir.
 * `versionName:` Version bilgisinin metinsel halidir.
 
-#### Android Manifest.xml Nedir?
+#### <a name="android-manifestxml-nedir"></a> Android Manifest.xml Nedir?
     * Uygulamamızın adını, iconunu, temasını bildirir.
     * Uygulamada kullanılacak version numaralarını, kütüphaneleri, minimum ve geçerli SDK sürümlerini bildirir.
     * Uygulamanın gerektirdiği veya uygulamada kullanacağımız yazılım-donanım özelliklerini bildirir. (kamera, bluetooth vs.)
     * Uygulama izinleri belirlerlenir. (internet bağlantısı, kullanıcı izinleri vs.)
     * Activitylerimizi yönetir ve bu activitylerin özelliklerini bildirir.(Tema, Orientation Mode,...)
 
-#### Intent Nedir?
+#### <a name="intent"></a> Intent Nedir?
     * Activity'ler arası veri taşımak için kullanılır.(Bundle)
     * Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
     * 2' ye ayrılır.
