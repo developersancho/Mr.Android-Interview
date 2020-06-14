@@ -467,8 +467,7 @@ buildToolsVersion versionuna eşit olması gerekir
 * `Explicit(açık) Intent` → aktiviteler arası geçiş. (Bundle, Intent)
 * `Implicit(üstü kapalı) Intent` ( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
 
-
-
+![TEAMS](4366818.jpeg "teams")
 
 ## KATKI SAĞLAYANLAR ##
 * [developersancho](https://github.com/developersancho)
