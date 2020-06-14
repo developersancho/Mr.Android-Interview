@@ -6,6 +6,46 @@
 * **[Memory Leak Nedir](#memory-leak-nedir)**
 * **[Big O Notasyonu Nedir?](#big-o-notasyonu-nedir)**
 * **[Queue ile Stack arasındaki fark nedir?](#queue-ile-stack-arasndaki-fark-nedir)**
+* **[MultiThread Nedir?](#multithread-nedir)**
+* **[THREADS](#threads)**
+* **[Paralel Programlama nedir?](#paralel)**
+* **[Asenkron Programlama(Concurrency) nedir?](#asenkron-programlamaconcurrency-nedir)**
+* **[COROUTINE nedir? ](#coroutine-nedir)**
+* **[OOP(Object Oriented Programming)](#oopobject-oriented-programming)**
+* **[Yazılım Geliştirme Modelleri](#yazlm-gelitirme-modelleri)**
+* **[Android 11](#android-11)**
+* **[Android 10](#android-10)**
+* **[KOTLIN](#kotlin)**
+* **[SOLID Prensipleri Nedir?](#solid-prensipleri-nedir)**
+* **[ADB(Android Debug Bridge) nedir?](#adbandroid-debug-bridge-nedir)**
+* **[NDK nedir?](#ndk-nedir)**
+* **[Bitmap nedir?](#bitmap-nedir)**
+* **[Vektörel Grafik nedir?](#vektrel-grafik-nedir)**
+* **[Multidex nedir?](#multidex-nedir)**
+* **[FileProvider Nedir?](#fileprovider-nedir)**
+* **[ListView ile RecyclerView arasındaki farklar nelerdir?](#listview-ile-recyclerview-arasndaki-farklar-nelerdir)**
+* **[Constraint Layout Özellikleri](#constraint-layout-zellikleri)**
+* **[Screen rotation edildiğinde activity lifecycle nasıl çalışır?](#screen-rotation-edildiinde-activity-lifecycle-nasl-alr)**
+* **[Serializable ve Parcelable nedir? Farkları nelerdir? ](#serializable-ve-parcelable-nedir-farklar-nelerdir)**
+* **[Bundle ile en fazla kaç mb veri taşınır?](#bundle-ile-en-fazla-ka-mb-veri-tanr)**
+* **[Build Type ve Product Flavor arasındaki fark nedir?](#build-type-ve-product-flavor-arasndaki-fark-nedir)**
+* **[ProGuard Nedir?](#proguard-nedir)**
+* **[Context Nedir?](#context-nedir)**
+* **[Service nedir?](#service-nedir)**
+* **[Broadcast Receiver nedir?](#broadcast-receiver-nedir)**
+* **[Activity ve Fragment Nedir?](#activity-ve-fragment-nedir)**
+* **[Activity ve Fragment Arasındaki Farklar Nelerdir?](#activity-ve-fragment-arasndaki-farklar-nelerdir)**
+* **[Activity Fragment Lifecycle Nedir?](#activity-fragment-lifecycle-nedir)**
+* **[Activity Lifecycle Metodları?](#activity-lifecycle-metodlar)**
+* **[SharedPreferences'e veri kaydetme metotlarından commit() ve apply() arasındaki farklar nedir?](#pref-apply-commit)**
+* **[Veri Saklama Yöntemleri Nelerdir?](#veri-saklama-yntemleri-nelerdir)**
+* **[Content Provider Nedir?](#content-provider-nedir)**
+* **[Launch Mode çeşitleri nelerdir?](#launch-mode-eitleri-nelerdir)**
+* **[Application Class Nedir?](#application-class-nedir)**
+* **[Gradle Nedir?](#gradle-nedir)**
+* **[Android Manifest.xml Nedir?](#android-manifestxml-nedir)**
+* **[Intent Nedir?](#intent-nedir)**
+
 
 #### <a name="memory-leak-nedir"></a> Memory Leak Nedir?
     * Belleğin(RAM) taşması demektir. Kullanılmayan nesnelerin bellekte tutulmasıdır.
@@ -54,12 +94,12 @@ private var activity: WeakReference<Activity>? = null
 #### <a name="queue-ile-stack-arasndaki-fark-nedir"></a> Queue ile Stack arasındaki fark nedir?
     * Queue → FIFO(İlk giren ilk çıkar), Stack → LIFO(Son giren ilk çıkar)
     
-#### MultiThread Nedir?
+#### <a name="multithread-nedir"></a> MultiThread Nedir?
     * Bir uygulamanın aynı anda birden fazla iş parçacıklarını(threads) işlemesidir.
 ###### Synchronization — Eş zamanlama
     * İlgili kod parçacığına aynı anda sadece bir iş parçacığı erişir ve diğerleri onu bekler.
 
-#### THREADS
+#### <a name="threads"></a> THREADS
 1) UI(Main) Thread
 2) Background(Worker) Thread
 3) Binder Thread 
@@ -76,7 +116,7 @@ private var activity: WeakReference<Activity>? = null
     Örn: Content Provider ile Contacts bilgilerinin alınması, Activity Lifecyle metotlarının ActivityManagerService
     tarafından çağrılması
 
-#### Paralel Programlama nedir?
+#### <a name="paralel"></a> Paralel Programlama nedir?
     * Bir görevi paralel olarak işlenebilecek daha küçük alt görevlere ayrılacak birden fazla CPU'da 
     thread'ler ile yürütülmesi sağlanır.
 
@@ -131,18 +171,6 @@ private var activity: WeakReference<Activity>? = null
 ###### super()
     * Bir alt sınıfın bir üst sınıfa erişmesini sağlar.    
 
-
-#### Constraint Layout Özellikleri
-    * Response tasarımlar için idealdir. Performanslıdır
-    * Weight dinamik olarak ayarlanabilir.
-    * Chain oluşturularak view'ler gruplandırılabilir.
-    * Farklı ekran boyutları için daha kullanışlıdır.
-    * Düz görünüm hiyerarşisine sahiptir.
-###### Tercih Eilmesinin En Önemli Sebebi
-    * Diğer layoutlar(Relative, Linear) içerisindeki view'ları iç içe döngü içerisinde çizilir(Nested Loops).
-    * Consraint layout düz görünüm hiyerarşine sahip olduğu için(tree structure) döngü içerisinde çizilmez. 
-    Bundan dolayı diğerlerine göre çok performanslıdır.
- 
 #### Yazılım Geliştirme Modelleri
     * Bir yazılımın, üretim aşaması ve kullanım süreci boyunca geçirdiği tüm aşamalar yazılımın yaşam döngüsüdür.
 ##### WaterFall(Şelale)
@@ -178,6 +206,7 @@ private var activity: WeakReference<Activity>? = null
     * Gesture Navigation
     * ShorcutInfo API
     * Location Controls
+    
     
 #### KOTLIN
     * NullCheck
@@ -234,6 +263,17 @@ private var activity: WeakReference<Activity>? = null
     * Listview bütün datayı ekran açılırken yükler, RecylerView ekranı kaydırdıkça yükler.
     * Listview'de yatay(horizontal) kaydırma yoktur, Recylerview'de yatay kaydırma vardır.
     * Listview'de onItemClick vardır, Recylerview'de yoktur.
+    
+#### Constraint Layout Özellikleri
+    * Response tasarımlar için idealdir. Performanslıdır
+    * Weight dinamik olarak ayarlanabilir.
+    * Chain oluşturularak view'ler gruplandırılabilir.
+    * Farklı ekran boyutları için daha kullanışlıdır.
+    * Düz görünüm hiyerarşisine sahiptir.
+###### Tercih Eilmesinin En Önemli Sebebi
+    * Diğer layoutlar(Relative, Linear) içerisindeki view'ları iç içe döngü içerisinde çizilir(Nested Loops).
+    * Consraint layout düz görünüm hiyerarşine sahip olduğu için(tree structure) döngü içerisinde çizilmez. 
+    Bundan dolayı diğerlerine göre çok performanslıdır.
 
 #### Screen rotation edildiğinde activity lifecycle nasıl çalışır?
     * Uygulama start edilir
@@ -402,14 +442,14 @@ buildToolsVersion versionuna eşit olması gerekir
 * `versionCode:` Uygulamamızı Play Store’a yüklerken ve güncelleyeceğimiz zaman sayısal olarak tutulan version değeridir.
 * `versionName:` Version bilgisinin metinsel halidir.
 
-#### Android Manifest.xml Dosyası Ne İşe Yarar?
+#### Android Manifest.xml Nedir?
     * Uygulamamızın adını, iconunu, temasını bildirir.
     * Uygulamada kullanılacak version numaralarını, kütüphaneleri, minimum ve geçerli SDK sürümlerini bildirir.
     * Uygulamanın gerektirdiği veya uygulamada kullanacağımız yazılım-donanım özelliklerini bildirir. (kamera, bluetooth vs.)
     * Uygulama izinleri belirlerlenir. (internet bağlantısı, kullanıcı izinleri vs.)
     * Activitylerimizi yönetir ve bu activitylerin özelliklerini bildirir.(Tema, Orientation Mode,...)
 
-#### Intent Ne İşe Yarar?
+#### Intent Nedir?
     * Activity'ler arası veri taşımak için kullanılır.(Bundle)
     * Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
     * 2' ye ayrılır.
@@ -420,7 +460,12 @@ buildToolsVersion versionuna eşit olması gerekir
 
 
 
-## Katkı Sağlayanlar
+## KATKI SAĞLAYANLAR ##
 * [developersancho](https://github.com/developersancho)
-* [mucahitkambur](https://github.com/mucahitkambur)
+* [gket](https://github.com/gket)
+* [pelingcinar](https://github.com/pelingcinar)
 * [mehmettas](https://github.com/mehmettas)
+* [samideliceli](https://github.com/samideliceli)
+* [CumaSoyak](https://github.com/CumaSoyak)
+* [mucahitkambur](https://github.com/mucahitkambur)
+
