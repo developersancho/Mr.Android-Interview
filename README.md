@@ -129,7 +129,6 @@ private var activity: WeakReference<Activity>? = null
     * abstract class is-a ilişkisi vardır, interface can-do ilişkisi vardır.
     * en az bir abstract metot varsa class abstract olmalı, interface içi boş olabilir.
     * abstract metotların gövdesi yoktur, interface metotların gövdesi olabilir.
-    * abstract class static metot içerebilir, interface static metot içermez.
 ###### super()
     * Bir alt sınıfın bir üst sınıfa erişmesini sağlar.    
 
@@ -142,7 +141,7 @@ private var activity: WeakReference<Activity>? = null
     * Düz görünüm hiyerarşisine sahiptir.
 ###### Tercih Eilmesinin En Önemli Sebebi
     * Diğer layoutlar(Relative, Linear) içerisindeki view'ları iç içe döngü içerisinde çizilir(Nested Loops).
-    Consraint layout düz görünüm hiyerarşine sahip olduğu için(tree structure) döngü içerisinde çizilmez. 
+    * Consraint layout düz görünüm hiyerarşine sahip olduğu için(tree structure) döngü içerisinde çizilmez. 
     Bundan dolayı diğerlerine göre çok performanslıdır.
  
 #### Yazılım Geliştirme Modelleri
@@ -356,12 +355,12 @@ Commit writes the changes synchronously and directly to the file.
 
 #### Launch Mode çeşitleri nelerdir?
     Bir uygulamada oluşturulan activity instance'larının tekrardan kullanıp kullanılamacağını belirleyen kurallardır.
-`standart:` Her bir Intent çağrısı için yeni bir tane Activity oluşturulur.
-`singleTop:` Intent çağrısı zaten oluşturulmuş bir Activity için çağırılırsa yeni bir Activity oluşturulmaz, onun yerine var olan 
+* `standart:` Her bir Intent çağrısı için yeni bir tane Activity oluşturulur.
+* `singleTop:` Intent çağrısı zaten oluşturulmuş bir Activity için çağırılırsa yeni bir Activity oluşturulmaz, onun yerine var olan 
 Activity instance kullanılmaya devam edilir. Bu mod kullanımında onNewIntent ve onCreate metotlarında düzenlenmelidir.
-`singleTask:` Çağrılan bir Activity' den sadece tek bir instance oluşturabilir. Sistem içerisinde zaten var olan bir Activity' e 
+* `singleTask:` Çağrılan bir Activity' den sadece tek bir instance oluşturabilir. Sistem içerisinde zaten var olan bir Activity' e 
 istek gönderilirse onNewIntent metodu kontrol edilmelidir.
-`singleInstance:` singleTask moduna benzer. Ancak bu activity' i tutan task sadece tek bir singleInstance olarak tanımlanmış 
+* `singleInstance:` singleTask moduna benzer. Ancak bu activity' i tutan task sadece tek bir singleInstance olarak tanımlanmış 
 activity' i barındırabilir.
 
 #### Application Class Nedir?
@@ -402,8 +401,8 @@ activity' i barındırabilir.
     * Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
     * 2' ye ayrılır.
 
-`Explicit(açık) Intent` → aktiviteler arası geçiş. (Bundle, Intent)
-`Implicit(üstü kapalı) Intent` ( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
+* `Explicit(açık) Intent` → aktiviteler arası geçiş. (Bundle, Intent)
+* `Implicit(üstü kapalı) Intent` ( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
 
 
 
