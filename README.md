@@ -15,6 +15,7 @@
     * Garbage Collection'ın leak oluşturan nesneleri bellekten silememesi durumudur.
  
 * Bellekte nesneler ve değer tipleri tutulur ve bunlar `STACK` ve `HEAP`' te saklanır.
+
 ###### Stack
     * Bellek içerisinde değer tipleri ve nesne referansları tutulur.
     * İlk giren son çıkar.
@@ -59,6 +60,44 @@ private var activity: WeakReference<Activity>? = null
 ###### Synchronization — Eş zamanlama
     * İlgili kod parçacığına aynı anda sadece bir iş parçacığı erişir ve diğerleri onu bekler.
 
+#### THREADS
+1) UI(Main) Thread
+2) Background(Worker) Thread
+3) Binder Thread 
+
+##### UI(Main) Thread
+    * Android UI güncellenmesi bu thread üzerinde gerçekleşir.
+##### Background(Worker) Thread
+    * Uzun sürecek işlemleri UI Thread'i meşgul etmeden arka planda yapılmasını sağlar.
+    * Örnek olarak webservice istekleri, firebase database işlemleri verilebilir.
+##### Binder Thread
+    * Farklı işlemler içindeki thread'leri birbirleriyle haberleşmesi için kullanılır.
+    * Tüm sistem servisleri(Intent, Content Provider, Telephone, Vibrator, Wifi, Battery, Notification vb.)
+    binder thread-> IPC(Inter Process Communication) üzerinden faydalanır.
+    Örn: Content Provider ile Contacts bilgilerinin alınması, Activity Lifecyle metotlarının ActivityManagerService
+    tarafından çağrılması
+
+#### Paralel Programlama nedir?
+    * Bir görevi paralel olarak işlenebilecek daha küçük alt görevlere ayrılacak birden fazla CPU'da 
+    thread'ler ile yürütülmesi sağlanır.
+
+#### Asenkron Programlama(Concurrency) nedir?
+    * Bir uygulamanın aynı anda birden fazla görevi, işi yapmasıdır. Ama bu işler paralel olarak farklı 
+    thread'lerde işlenmeyebilir.
+    * Uzun süren IO işlerinin CPU'yu bloklamaması amacıyla kullanılır.
+    * Kotlin bu yöntemi sağlamak için COROUTINE denilen bir yapı sunar.
+    
+#### COROUTINE nedir?    
+    * Thread değildir. LightWeight thread denilir.
+    * Thread tarafından yürütülen iş parçalarıdır.    
+##### suspend nedir?
+    * Mevcut thread'ı bloke etmeden coroutine yürütülmesini askıya alır, sıralı işletilir.
+##### async nedir?
+    * Geriye değer dönen asenkron işlemler için kullanılır.
+##### launch nedir?
+    * Geriye değer dönmeyen işlemler için kullanılır. Çalıştır-Unut prensibiyle çalışır.
+##### runblocking nedir?
+    * İlgili coroutine tamamlana kadar mevcut thread' bloke eder.
 
 #### OOP(Object Oriented Programming)
     * OOP denildiğinde aklımıza aşağıdaki 4 kavram gelmelidir.
@@ -109,7 +148,7 @@ private var activity: WeakReference<Activity>? = null
 #### Yazılım Geliştirme Modelleri
     * Bir yazılımın, üretim aşaması ve kullanım süreci boyunca geçirdiği tüm aşamalar yazılımın yaşam döngüsüdür.
 ##### WaterFall(Şelale)
-    * Planşama-Analiz-Tasarım-Geliştirme-Test-Uygulama, buradaki aşamaları sırayla gerçekleştirilir.
+    * Planlama-Analiz-Tasarım-Geliştirme-Test-Uygulama, buradaki aşamaları sırayla gerçekleştirilir.
     * Bir aşama bitmeden diğer aşamaya geçilmez.
     * İletişim tek yönlüdür.
     * Bir önceki aşamaya geri dönüş çok zordur.
@@ -124,9 +163,102 @@ private var activity: WeakReference<Activity>? = null
     * XP(Exterme Programming)
     * TDD(Test Driven Development)
     * FDD(Feature Driven Development)
- 
 
- 
+#### Android 11
+    * Wireless Debuging
+    * Bubbles
+    * IME Animations
+    * Privacy
+    * AutoFill
+    * Background Location
+    * 5G Support
+    * Foldo
+
+#### Android 10
+    * Dark Theme
+    * 5G Support
+    * Gesture Navigation
+    * ShorcutInfo API
+    * Location Controls
+    
+#### KOTLIN
+    * NullCheck
+    * val,var
+    * when
+    * high order function(let, run, apply, with)
+    * extension function
+    * type alias
+    * DSL infix notation(dsl üretme, infix fun Int.plus(c: Int) -> 15.plus(5) yerine 15 plus 5 yazılır.)
+    * delegation (değişkenlerin değerinin yönetimini başka bir fonksiyona veriyoruz.)
+    
+#### SOLID Prensipleri Nedir?
+    * SOLID yazılım prensipleri; geliştirilen yazılımın esnek, yeniden kullanılabilir, sürdürülebilir 
+    ve anlaşılır olmasını sağlayan, kod tekrarını önleyen ve Robert C. Martin tarafından öne sürülen 
+    prensipler bütünüdür.
+###### S — Single-responsibility principle
+    * Bir sınıf (nesne) sadece bir işten sorumludur.
+###### O — Open-closed principle
+    * Bir sınıf (nesne) gelişime açık, değişime kapalı olması.
+###### L — Liskov substitution principle
+    * Alt sınıfları, türedikleri(üst) sınıfların yerine kullanma.
+###### I — Interface segregation principle
+    * Sorumlulukların hepsini tek bir arayüze toplamak yerine daha özelleştirilmiş birden fazla arayüz oluşturma
+###### D — Dependency Inversion Principle
+    * Bağımlılığı tersine çevirme, daha az bağımlı olma.
+
+#### ADB(Android Debug Bridge) nedir?
+    * Android bir cihaz ile iletişim kurulmasını sağlayan bir yapıdır.
+
+#### NDK nedir?
+    * Android uygulamalarımızda C ve ya C++ dillerinde geliştirilmiş olan kodlarımızı
+    kullanmamızı sağlayan bir araçtır.
+    
+#### Bitmap nedir?
+    * PNG, JPEG, BMP, GIF gibi dosya formatları bitmap olarak isimlendirilir. Resim için 
+    renkler ve konumları bir harita gibi işler.
+    
+#### Vektörel Grafik nedir?
+    * Path halide tutulur.
+    * Bir çizgi başlangıç ve bitiş noktasının bilgisi tutulur. Dosya çalıştırılınca parse edilir,
+    bitmap'e dönüştürülür.
+    
+#### Multidex nedir?
+    * APK dosyalarında .dex(Dalvik Executable) uzantısına sahip dosyalar bulunur. 
+    * Bir dex dosyası 65,536'den referansa(metot) sınırlar. 
+    * Bu sınır geçiliyorsa multidex enable true yapılmalıdır(21+).
+    * Aksi halde “Error: Cannot fit requested classes in a single dex file.Try supplying a main-dex list. # methods: 72477 > 65536”
+    hatası alır.
+
+#### FileProvider Nedir?
+    * 19+ için izin almadan kamera ile fotoğraf çekip app external storage kaydetmesini sağlar.
+
+#### ListView ile RecyclerView arasındaki farklar nelerdir?
+    * Listview bütün datayı ekran açılırken yükler, RecylerView ekranı kaydırdıkça yükler.
+    * Listview'de yatay(horizontal) kaydırma yoktur, Recylerview'de yatay kaydırma vardır.
+    * Listview'de onItemClick vardır, Recylerview'de yoktur.
+
+#### Screen rotation edildiğinde activity lifecycle nasıl çalışır?
+    * Uygulama start edilir
+    * Sırası ile onCreate() -> onStart() -> onResume() -> Cihaz rotation yapılır 
+    -> onPause() -> onStop() -> onSaveInstanceState() -> onDestroy() 
+    -> onCreate() -> onStart() -> onRestoreInstanceState(), onResume() metotları çalışır.
+
+#### Serializable ve Parcelable nedir? Farkları nelerdir? 
+    * Parcelable, Serializable göre daha hızlı, performanslıdır.
+    * Parcelable android için geliştirilmiştir.
+    * Serializable java interface'idir.
+    
+#### Bundle ile en fazla kaç mb veri taşınır?
+    * En fazla 1 MB veri taşınır. Fazlası için memory cache ve ya local cache kullanabilir.
+
+#### Build Type ve Product Flavor arasındaki fark nedir?
+    * Build Type, uygulamanın paketlenmesi
+    * Product Flavor, uygulama için kullanıcıya yayınlayabileceğimiz farklı sürümler oluşturmamızı sağlar.
+
+#### ProGuard Nedir?
+    * Geliştirilen uygulamaların kaynak kodlarını karıştırmaya ve sıkıştırmaya 
+    (uygulama boyutunu düşürmeye) yarayan ücretsiz 3. parti bir kütüphanedir.
+
 #### Context Nedir?
     * Context, uygulamanın herhangi bir zamandaki durumunu tutan bir objedir.
     * Uygulamadaki kaynaklara referans olarak her yerden erişmemizi saglayan Android işletim sistemi 
@@ -134,27 +266,34 @@ private var activity: WeakReference<Activity>? = null
     * Uygulamanın /res klasöründe bulunan kaynaklara (stringler, resim dosyaları vs.) erişimi 
     sağlamak için kullanılır. 
     * Yeni bir Activity başlatma, Intent'leri kullanma gibi işler de Context tarafından yapılır.
-    * 4 tanedir. Bunlar;
+    * 4 tanedir. Bunlar; Activity, Service, Broadcast Receiver, Content Provider
 
-`Application Context`, getApplicationContext() metoduyla uygulamanın herhangi bir yerinden uygulama Context’ini alır, singleton’dır, 
-                       uygulamayla aynı yaşam süresine sahiptir.
-`Activity Context`,    ActivityName.this yoluyla çağrılır ve Activity ile aynı yaşam süresine sahiptir. Daha çok o Activity içerisindeki 
-                       objelerde kullanılır. Service’ler de aynı mantıktadır. Activity’nin kendisi Context’i implement eder.
-`ContentProvider`,     herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
-`BroadcastReceiver`,   kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
+`Application Context`, getApplicationContext() metoduyla uygulamanın herhangi bir yerinden uygulama Context’ini alır, singleton’dır,uygulamayla aynı yaşam süresine sahiptir.
+`Activity Context`, ActivityName.this yoluyla çağrılır ve Activity ile aynı yaşam süresine sahiptir. Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de aynı mantıktadır. Activity’nin kendisi Context’i implement eder.
+`ContentProvider`, herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
+`BroadcastReceiver`, kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
+
+#### Service nedir?
+    * Arayüzü olmayan arka planda çalışan yapıdır.
+    * 2 tanedir.
+###### Foreground Service
+    * UI thread'de çalışır. Service'ten extend edilir. 
+###### Background Service
+    * Background thread'de çalışır. IntentService'ten extend edilir. 
+
+#### Broadcast Receiver nedir?
+    * İşletim sistemi genelinde bir uygulama ve ya kendisinin bir parçası tarafından yayınlanan
+    sinyallerin dinlenmesini sağlar.
 
 #### Activity ve Fragment Nedir?
-    Activity’ler, Android platformundaki uygulamaların temel yapı taşlarından biridir.
-    Etkileşimli bir uygulama için bir giriş noktası işlevi görürler ve kullanıcıya bir uygulama aracılığıyla erişebilirler.
-
-    Fragment, bir Activity’de activity veya kullanıcı arabiriminin bir bölümünü temsil eder. Çoklu UI oluşturmak amacıyla kulanılır.
+    * Activity’ler, Android platformundaki uygulamaların temel yapı taşlarından biridir.
+    * Etkileşimli bir uygulama için bir giriş noktası işlevi görürler ve kullanıcıya bir uygulama aracılığıyla erişebilirler.
+    * Fragment, bir Activity’de activity veya kullanıcı arabiriminin bir bölümünü temsil eder. Çoklu UI oluşturmak amacıyla kulanılır.
 
 #### Activity ve Fragment Arasındaki Farklar Nelerdir?
-    Activity tek başına oluşturulabilir. Fragment oluşturmak için Activity'e ihtiyaç vardır.
-    Activity birden fazla fragment içerebilir.
-    Her ikisininde kendine ait yaşam döngüleri vardır.(Lifecycle)
-
-* Google Single Activity kullanımını önerir. Bunun için [Navigation Component][https://developer.android.com/guide/navigation/navigation-getting-started] kullanılabilir.
+    * Activity tek başına oluşturulabilir. Fragment oluşturmak için Activity'e ihtiyaç vardır.
+    * Activity birden fazla fragment içerebilir.
+    * Her ikisininde kendine ait yaşam döngüleri vardır.(Lifecycle)
 
 #### Activity Fragment Lifecycle Nedir?
     Bir kullanıcı, uygulamanızda gezinirken, uygulamanın dışındayken ve geri döndüğünde, uygulamanızdaki Activity'ler yaşam döngüsünde farklı hallerde geçiş yapar. Activity sınıfı, bir durumun değiştiğini activity’ye bildirebilmesini sağlayan bir dizi geri arama sağlar:
@@ -196,7 +335,8 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
     commit 'te işlem başarılı ise true, başarısız ise false döner. apply arka planda gerçekleşir değer dönmez.
     apply commit'e göre daha hızlıdır.
 
-* Use apply(). It writes the changes to the RAM immediately and waits and writes it to the internal storage(the actual preference file) after. Commit writes the changes synchronously and directly to the file.
+* Use apply(). It writes the changes to the RAM immediately and waits and writes it to the internal storage(the actual preference file) after. 
+Commit writes the changes synchronously and directly to the file.
 
 
 #### Veri Saklama Yöntemleri Nelerdir?
@@ -209,27 +349,33 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
     7- Remote Connection(Firebase, Webservice)
 
 #### Content Provider Nedir?
-    Bir uygulamanın, diğer uygulamalar tarafından depolanan verilere erişimi yönetmesini ve diğer uygulamalara veri paylaşımını sağlayan bir yapıdır.
-    İçerik sağlayıcılar, bir işlemdeki verileri başka bir işlemde çalışan kodla bağlayan standart arabirimdir.
+    * Bir uygulamanın, diğer uygulamalar tarafından depolanan verilere erişimi yönetmesini ve 
+    diğer uygulamalara veri paylaşımını sağlayan bir yapıdır.
+    * İçerik sağlayıcılar, bir işlemdeki verileri başka bir işlemde çalışan kodla bağlayan 
+    standart arabirimdir.
 
 #### Launch Mode çeşitleri nelerdir?
     Bir uygulamada oluşturulan activity instance'larının tekrardan kullanıp kullanılamacağını belirleyen kurallardır.
-* `standart:` Her bir Intent çağrısı için yeni bir tane Activity oluşturulur.
-
-* `singleTop:` Intent çağrısı zaten oluşturulmuş bir Activity için çağırılırsa yeni bir Activity oluşturulmaz, onun yerine var olan Activity instance kullanılmaya devam edilir. Bu mod kullanımında onNewIntent ve onCreate metotlarında düzenlenmelidir.
-
-* `singleTask:` Çağrılan bir Activity' den sadece tek bir instance oluşturabilir. Sistem içerisinde zaten var olan bir Activity' e istek gönderilirse onNewIntent metodu kontrol edilmelidir.
-
-* `singleInstance:` singleTask moduna benzer. Ancak bu activity' i tutan task sadece tek bir singleInstance olarak tanımlanmış activity' i barındırabilir.
+`standart:` Her bir Intent çağrısı için yeni bir tane Activity oluşturulur.
+`singleTop:` Intent çağrısı zaten oluşturulmuş bir Activity için çağırılırsa yeni bir Activity oluşturulmaz, onun yerine var olan 
+Activity instance kullanılmaya devam edilir. Bu mod kullanımında onNewIntent ve onCreate metotlarında düzenlenmelidir.
+`singleTask:` Çağrılan bir Activity' den sadece tek bir instance oluşturabilir. Sistem içerisinde zaten var olan bir Activity' e 
+istek gönderilirse onNewIntent metodu kontrol edilmelidir.
+`singleInstance:` singleTask moduna benzer. Ancak bu activity' i tutan task sadece tek bir singleInstance olarak tanımlanmış 
+activity' i barındırabilir.
 
 #### Application Class Nedir?
-    Application Class, Activity ve Services gibi bileşenleri içeren Android uygulamasının temel sınıfıdır.
-    Uygulama veya alt sınıfları, Android uygulamasında tüm etkinlikler veya diğer uygulama nesneleri oluşturulmadan önce başlatılır.
+    * Application Class, Activity ve Services gibi bileşenleri içeren Android uygulamasının temel sınıfıdır.
+    * Uygulama veya alt sınıfları, Android uygulamasında tüm etkinlikler veya diğer uygulama nesneleri oluşturulmadan önce başlatılır.
 
 #### Gradle Nedir?
-    Android uygulaması geliştirme aşamalarını otomatize eden açık kaynak kodlu Android Studio üzerinde çalışan bir yapı sistemidir.
-    Bir Android projesinin oluşturulmasından tamamlanmasına giden yolda derleme, test etme, paketleme gibi işlemler söz konusudur.Gradle, Android uygulaması geliştirme aşamalarını yapılandırmamızı sağlayan, açık kaynak kodlu, Android Studio üzerinde çalışan bir inşa sistemidir.Android Studio üzerinde bir proje oluşturduğumuzda, Gradle build sistemi otomatik olarak devreye girer ve build işlemini gerçekleştirir.
-    Burada build etmekten anlayacağımız; uygulama kaynaklarını ve kaynak kodunu derlemek, bunları test edilebilir-uygulanabilir-imzalanabilir ve yayınlayacağımız APK’lar haline getirmek olmalıdır.
+    * Android uygulaması geliştirme aşamalarını otomatize eden açık kaynak kodlu Android Studio üzerinde çalışan bir yapı sistemidir.
+    * Bir Android projesinin oluşturulmasından tamamlanmasına giden yolda derleme, test etme, paketleme gibi işlemler söz konusudur.
+    * Gradle, Android uygulaması geliştirme aşamalarını yapılandırmamızı sağlayan, açık kaynak kodlu, Android Studio üzerinde çalışan 
+    bir inşa sistemidir.
+    * Android Studio üzerinde bir proje oluşturduğumuzda, Gradle build sistemi otomatik olarak devreye girer ve build işlemini gerçekleştirir.
+    Burada build etmekten anlayacağımız; uygulama kaynaklarını ve kaynak kodunu derlemek, bunları test edilebilir-uygulanabilir-imzalanabilir 
+    ve yayınlayacağımız APK’lar haline getirmek olmalıdır.
 
 * `buildscript:` Gradle’ın kendi depolarını ve bağımlılıklarını yapılandırdığımız bloktur.
 * `repositories:` Gradle’ın depolarını veya kendi uzak depolarımızı tanımladığımız yerdir.
@@ -245,20 +391,19 @@ Activity içerisinde geri geldiğimizde tetiklenen metottur.
 * `versionName:` Version bilgisinin metinsel halidir.
 
 #### Android Manifest.xml Dosyası Ne İşe Yarar?
-
-* Uygulamamızın adını, iconunu, temasını bildirir.
-* Uygulamada kullanılacak version numaralarını, kütüphaneleri, minimum ve geçerli SDK sürümlerini bildirir.
-* Uygulamanın gerektirdiği veya uygulamada kullanacağımız yazılım-donanım özelliklerini bildirir. (kamera, bluetooth vs.)
-* Uygulama izinleri belirlerlenir. (internet bağlantısı, kullanıcı izinleri vs.)
-* Activitylerimizi yönetir ve bu activitylerin özelliklerini bildirir.(Tema, Orientation Mode,...)
+    * Uygulamamızın adını, iconunu, temasını bildirir.
+    * Uygulamada kullanılacak version numaralarını, kütüphaneleri, minimum ve geçerli SDK sürümlerini bildirir.
+    * Uygulamanın gerektirdiği veya uygulamada kullanacağımız yazılım-donanım özelliklerini bildirir. (kamera, bluetooth vs.)
+    * Uygulama izinleri belirlerlenir. (internet bağlantısı, kullanıcı izinleri vs.)
+    * Activitylerimizi yönetir ve bu activitylerin özelliklerini bildirir.(Tema, Orientation Mode,...)
 
 #### Intent Ne İşe Yarar?
-    Activity'ler arası veri taşımak için kullanılır.(Bundle)
-    Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
-    2' ye ayrılır.
+    * Activity'ler arası veri taşımak için kullanılır.(Bundle)
+    * Activity, service, Broadcast Receiver, ContentProvider, diğer uygulamalar arasında haberleşmeyi sağlar.
+    * 2' ye ayrılır.
 
-* `Explicit(açık) Intent` → aktiviteler arası geçiş. (Bundle, Intent)
-* `Implicit(üstü kapalı) Intent` ( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
+`Explicit(açık) Intent` → aktiviteler arası geçiş. (Bundle, Intent)
+`Implicit(üstü kapalı) Intent` ( Telefon araması yapmak, mesaj(sms), mail göndermek, foto ve video çekmek)
 
 
 
