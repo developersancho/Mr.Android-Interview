@@ -2,13 +2,12 @@
 
 #### Prepared by [developersancho](https://github.com/developersancho) who is having experience and work on Android Development.
 
-## İçerik
-* <a href="#anr-nedir">ANR Nedir?</a>
-* <a href="#context-nedir">Context Nedir?</a>
-
 ## Sorular
+* **[Memory Leak Nedir](#memory-leak-nedir)**
+* **[Big O Notasyonu Nedir?](#big-o-notasyonu-nedir)**
+* **[Queue ile Stack arasındaki fark nedir?](#queue-ile-stack-arasndaki-fark-nedir)**
 
-#### Memory Leak Nedir?
+#### <a name="memory-leak-nedir"></a> Memory Leak Nedir?
     * Belleğin(RAM) taşması demektir. Kullanılmayan nesnelerin bellekte tutulmasıdır.
     * Nesne oluşturulduğunda bellekte "(HEAP)" saklanır, sonrasında saklınılan yerden 
     bu işaretlenen nesnenin(kullanılmayan) silinememesi durumunda memory leak oluşur.
@@ -47,12 +46,12 @@
 ```kotlin
 private var activity: WeakReference<Activity>? = null
 ```
-#### Big O Notasyonu Nedir?
+#### <a name="big-o-notasyonu-nedir"></a> Big O Notasyonu Nedir?
     * Bir algoritmanın performansını ve ya Time Complexity'sini hesaplamak için kullanılır.
 ###### Time Complexity
     * Bir algoritmanın çalışması için gerekli olan süredir. Bu süre işlem sayısına göre hesaplanır.
     
-#### Queue ile Stack arasındaki fark nedir?
+#### <a name="queue-ile-stack-arasndaki-fark-nedir"></a> Queue ile Stack arasındaki fark nedir?
     * Queue → FIFO(İlk giren ilk çıkar), Stack → LIFO(Son giren ilk çıkar)
     
 #### MultiThread Nedir?
@@ -267,10 +266,12 @@ private var activity: WeakReference<Activity>? = null
     * Yeni bir Activity başlatma, Intent'leri kullanma gibi işler de Context tarafından yapılır.
     * 4 tanedir. Bunlar; Activity, Service, Broadcast Receiver, Content Provider
 
-`Application Context`, getApplicationContext() metoduyla uygulamanın herhangi bir yerinden uygulama Context’ini alır, singleton’dır,uygulamayla aynı yaşam süresine sahiptir.
-`Activity Context`, ActivityName.this yoluyla çağrılır ve Activity ile aynı yaşam süresine sahiptir. Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de aynı mantıktadır. Activity’nin kendisi Context’i implement eder.
-`ContentProvider`, herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
-`BroadcastReceiver`, kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
+* `Application Context`, getApplicationContext() metoduyla uygulamanın herhangi bir yerinden uygulama Context’ini alır, 
+singleton’dır,uygulamayla aynı yaşam süresine sahiptir.
+* `Activity Context`, ActivityName.this yoluyla çağrılır ve Activity ile aynı yaşam süresine sahiptir. 
+Daha çok o Activity içerisindeki objelerde kullanılır. Service’ler de aynı mantıktadır. Activity’nin kendisi Context’i implement eder.
+* `ContentProvider`, herhangi bir Context barındırmaz, sahip olunan getContext() metodu ile uygulama Context’i alınabilir.
+* `BroadcastReceiver`, kendisi herhangi bir Context barındırmaz. onReceive() metoduyla Context alabilir.
 
 #### Service nedir?
     * Arayüzü olmayan arka planda çalışan yapıdır.
@@ -295,28 +296,36 @@ private var activity: WeakReference<Activity>? = null
     * Her ikisininde kendine ait yaşam döngüleri vardır.(Lifecycle)
 
 #### Activity Fragment Lifecycle Nedir?
-    Bir kullanıcı, uygulamanızda gezinirken, uygulamanın dışındayken ve geri döndüğünde, uygulamanızdaki Activity'ler yaşam döngüsünde farklı hallerde geçiş yapar. Activity sınıfı, bir durumun değiştiğini activity’ye bildirebilmesini sağlayan bir dizi geri arama sağlar:
-    sistem, bir activity oluşturuyor, durduruyor, devam ettiriyor veya etkinliğin bulunduğu işlemi yok ediyor.Yaşam döngüsü geri arama yöntemleri içinde, kullanıcı uygulamayı terk edip yeniden girdiğinde etkinliğinizin nasıl davrandığını bildirebilirsiniz.
+    * Bir kullanıcı, uygulamanızda gezinirken, uygulamanın dışındayken ve geri döndüğünde, uygulamanızdaki Activity'ler 
+    yaşam döngüsünde farklı hallerde geçiş yapar.
+     * Activity sınıfı, bir durumun değiştiğini activity’ye bildirebilmesini sağlayan bir dizi geri arama sağlar:
+    sistem, bir activity oluşturuyor, durduruyor, devam ettiriyor veya etkinliğin bulunduğu işlemi yok ediyor.
+    * Yaşam döngüsü geri arama yöntemleri içinde, kullanıcı uygulamayı terk edip yeniden girdiğinde etkinliğinizin nasıl davrandığını bildirebilirsiniz.
 
 #### Activity Lifecycle Metodları?
 * `onCreate()` Activity başlatıldığında ilk çağırılan metoddur.
 * `onStart()` onCreate metodu çalıştırıldıktan sonra, görsel ögeler (tasarım) oluştuğunda çağırılan metoddur.
 * `onResume()` Eğer activity durdurulduysa, onResume ile tekrar aktif hale getirilir.
 * `onPause()` Activity arka plana atıldığında çalışır (cihazın back tuşuna basılması vs.)
-* `onStop()` onPause gibi activity arka plana atıldığında çalışır. onStop için iki durumdan bahsedebiliriz. Bunlar kullanıcının veya uygulamanın tekrar aynı activitye dönmesi veya bir daha activitye geri gelmemesidir. Activitye geri dönüldüğü taktirde onRestart -> onStart metodları çalışır, ikinci durumda ise onDestroy metodu ile yaşam döngüsü tamamlanır.
+* `onStop()` onPause gibi activity arka plana atıldığında çalışır. onStop için iki durumdan bahsedebiliriz. 
+Bunlar kullanıcının veya uygulamanın tekrar aynı activitye dönmesi veya bir daha activitye geri gelmemesidir. 
+Activitye geri dönüldüğü taktirde onRestart -> onStart metodları çalışır, ikinci durumda ise onDestroy metodu ile yaşam döngüsü tamamlanır.
 * `onDestroy()` Yaşam döngüsünü tamamlanır. Bir activitye ait bütün kaynaklar temizlenir.
 
 * `onRestart()`
  Kullanıcıya uygulamaya geri döndüğünde onStop () ‘dan sonra çağrılır. OnStart () ve onResume () takip eder
 
 * `onSaveInstanceState()`
-Öldürülmeden önce bir etkinlikten örnek durumunu almak için çağrılır ve böylece durumun onCreate (Bundle) veya onRestoreInstanceState (Bundle) (bu yöntemle doldurulan Bundle her ikisine de geçilir) olarak geri yüklenebilir.
+Öldürülmeden önce bir etkinlikten örnek durumunu almak için çağrılır ve böylece durumun onCreate (Bundle) veya 
+onRestoreInstanceState (Bundle) (bu yöntemle doldurulan Bundle her ikisine de geçilir) olarak geri yüklenebilir.
 Bu yöntem, bir etkinliğin öldürülmesi öncesinde çağrılır; böylece gelecekte bir süre geri döndüğünde duruma geri yüklenebilir.
 
 * `onRestoreInstanceState()`
 Bu yöntem, onStart () işleminden sonra, burada savedInstanceState içinde verilen önceden kaydedilmiş bir durumdan yeniden başlatıldığında kullanılır.
-Çoğu uygulama, yalnızca durumunu düzeltmek için onCreate kullanır, ancak bazen başlatma tamamlandıktan sonra varsayılan uygulamanızın kullanılıp kullanılmayacağına izin vermek için bunu yapmak daha uygun olacaktır.
-Bu yöntemin varsayılan uygulaması, daha önce onSaveInstanceState (Bundle) tarafından dondurulmuş olan herhangi bir görünüm durumunun geri yüklenmesini gerçekleştirir.
+Çoğu uygulama, yalnızca durumunu düzeltmek için onCreate kullanır, ancak bazen başlatma tamamlandıktan sonra varsayılan uygulamanızın 
+kullanılıp kullanılmayacağına izin vermek için bunu yapmak daha uygun olacaktır.
+Bu yöntemin varsayılan uygulaması, daha önce onSaveInstanceState (Bundle) tarafından dondurulmuş olan herhangi bir görünüm durumunun 
+geri yüklenmesini gerçekleştirir.
 Bu yöntem, onStart () ve onPostCreate (Paket) arasında çağrılır.
 
 * `onActivityResult()`
@@ -380,12 +389,16 @@ activity' i barındırabilir.
 * `repositories:` Gradle’ın depolarını veya kendi uzak depolarımızı tanımladığımız yerdir.
 * `dependencies:` Projeyi oluşturmak için Gradle’ın kullanması gereken bağımlılıkların eklendiği yerdir.
 * `allprojects:` Bu blok özel özellikleri taşır ve bunları tüm proje üzerindeki modüllere sunar.
-* `apply plugin:` Android üzerinde kullanılan eklentilerin Android üzerinde kullanılabilir hale getirilmesi için belirtildiği satırdır.Örneğin görselde kotlin-android eklentisini belirtmişiz.Projemiz kotlin koduyla yazılıp derlenebilecek.
+* `apply plugin:` Android üzerinde kullanılan eklentilerin Android üzerinde kullanılabilir hale getirilmesi için belirtildiği satırdır.
+Örneğin görselde kotlin-android eklentisini belirtmişiz.Projemiz kotlin koduyla yazılıp derlenebilecek.
 * `applicationId:` Uygulamamızın paket adıdır.
 * `minSdkVersion:` Uygulamanın en düşük hangi sürümde çalışabileceğini belirtir.
-* `targetSdkVersion:` Uygulama için belirlenen geçerli versiondur.SDK platformunun en yüksek version değerini almalıdır.Eğer bu değer belirtilmediyse minSdkVersion değeri ne ise o kullanılır.Her yeni Android sürümü çıktığında targetSdkVersion güncellenmelidir ki uygulamamızda yer alan bazı özelliklerin son sürümle uyumlu çalışıp çalışmadığını görelim.
+* `targetSdkVersion:` Uygulama için belirlenen geçerli versiondur.SDK platformunun en yüksek version değerini almalıdır.
+Eğer bu değer belirtilmediyse minSdkVersion değeri ne ise o kullanılır.Her yeni Android sürümü çıktığında targetSdkVersion güncellenmelidir 
+ki uygulamamızda yer alan bazı özelliklerin son sürümle uyumlu çalışıp çalışmadığını görelim.
 * `compileSdkVersion:` Uygulamayı compile etmek istediğimiz versiondur.minSdkVersiondan düşük olmamalıdır.
-* `buildToolsVersion:` Dependencies bloğundaki kütüphanelerin uygulamamızla uyumlu kullanabilmemiz için, kütüphanelerin versionlarının buildToolsVersion versionuna eşit olması gerekir
+* `buildToolsVersion:` Dependencies bloğundaki kütüphanelerin uygulamamızla uyumlu kullanabilmemiz için, kütüphanelerin versionlarının 
+buildToolsVersion versionuna eşit olması gerekir
 * `versionCode:` Uygulamamızı Play Store’a yüklerken ve güncelleyeceğimiz zaman sayısal olarak tutulan version değeridir.
 * `versionName:` Version bilgisinin metinsel halidir.
 
