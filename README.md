@@ -489,10 +489,5 @@ buildToolsVersion versionuna eşit olması gerekir
 
 ## KATKI SAĞLAYANLAR ##
 * [developersancho](https://github.com/developersancho)
-* [gket](https://github.com/gket)
-* [pelingcinar](https://github.com/pelingcinar)
-* [mehmettas](https://github.com/mehmettas)
-* [samideliceli](https://github.com/samideliceli)
-* [CumaSoyak](https://github.com/CumaSoyak)
 * [mucahitkambur](https://github.com/mucahitkambur)
 
