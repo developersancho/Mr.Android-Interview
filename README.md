@@ -191,7 +191,7 @@ private var activity: WeakReference<Activity>? = null
 ###### Agile(Çevik)-Kullanılan Metodolojiler
     * Scrum
     * Kanban
-    * XP(Exterme Programming)
+    * XP(Extreme Programming)
     * TDD(Test Driven Development)
     * FDD(Feature Driven Development)
 
