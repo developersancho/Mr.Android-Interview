@@ -3,7 +3,8 @@
 #### Prepared by [developersancho](https://github.com/developersancho) who is having experience and work on Android Development.
 
 ## Sorular
-* **[Memory Leak Nedir](#memory-leak-nedir)**
+* **[Class-Object Nedir?](#class-object-nedir)**
+* **[Memory Leak Nedir?](#memory-leak-nedir)**
 * **[Big O Notasyonu Nedir?](#big-o-notasyonu-nedir)**
 * **[Queue ile Stack arasındaki fark nedir?](#queue-ile-stack-arasndaki-fark-nedir)**
 * **[MultiThread Nedir?](#multithread-nedir)**
@@ -47,6 +48,9 @@
 * **[Android Manifest.xml Nedir?](#android-manifestxml-nedir)**
 * **[Intent Nedir?](#intent)**
 
+#### <a name="class-object-nedir"></a> Class-Object Nedir?
+    * Class nesnelerin durumunun tanımlandığı yerdir.
+    * Object Class'ın somut hale getirilmesidir. Class'ın davranış kazanmasıdır. 
 
 #### <a name="memory-leak-nedir"></a> Memory Leak Nedir?
     * Belleğin(RAM) taşması demektir. Kullanılmayan nesnelerin bellekte tutulmasıdır.
